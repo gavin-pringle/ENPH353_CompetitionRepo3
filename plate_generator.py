@@ -16,7 +16,7 @@ with open(path + "plates.csv", 'w') as plates_file:
     csvwriter = csv.writer(plates_file)
 
     # Number of sets of 10 plates that are needed
-    for multiplier in range(0, 3):
+    for multiplier in range(0, 50):
         # Want P1 through P9
         for i in range(0, 9):
 

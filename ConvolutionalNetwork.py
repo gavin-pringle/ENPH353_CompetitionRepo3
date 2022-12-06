@@ -114,8 +114,8 @@ class ConvNet:
 
 ## Main function that keeps the simulation running until it is stopped by a user
 def main(args):
-  # name of node is line_follow
-  rospy.init_node('line_follow', anonymous=True)
+  # name of node is ConvNet
+  rospy.init_node('ConvNet', anonymous=True)
   ic = ConvNet()
   cv2.destroyAllWindows()
 
