@@ -52,18 +52,20 @@ for i in range(file_count):
     licenseName = files1[i]
     parkingName = files2[i]
 
-    LicensePos = np.empty((4, 170, 100, 3))
+    LicensePos = np.empty((5, 170, 100, 3))
 
     LicensePos[0] = license[80:250, 50:150]
     LicensePos[1] = license[80:250, 150:250]
     LicensePos[2] = license[80:250, 345:445]
-    LicensePos[3] = license[80:250, 445:545]
+    LicensePos[3] = license[80:250, 345:445]
+    LicensePos[4] = license[80:250, 445:545]
 
-    for j in range(numberCharacters-1):
-        cv2.imwrite(os.path.join(path + "ProcessedDataFolder/", 
+    for j in range(numberCharacters):
+        if(j!= 2):
+            cv2.imwrite(os.path.join(path + "ProcessedDataFolder/", 
                                 "plate_{}_{}.png".format(licenseName[j], count+j)),
                                 LicensePos[j])
     
     cv2.imwrite(os.path.join(path + "ProcessedDataFolder/", 
-                                "plate_{}_{}.png".format(parkingName[1], count)),
+                                "plate_{}_{}.png".format(parkingName[0], count)),
                                 ParkingSpace)
